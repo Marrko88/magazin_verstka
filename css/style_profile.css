@@ -1,0 +1,333 @@
+*, *::before, *::after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.page{
+    background: #F3F3F3;
+}
+.container {
+    background: #F3F3F3;
+    max-width: 1440px;
+    height: auto;
+    margin: 0 auto; /* центрирует по горизонтали */
+    box-sizing: border-box;
+}
+
+.content{
+    display: flex;
+
+}
+
+.profile{
+    display: flex;
+    width: 229px;
+    height: 138px;
+}
+
+.header {
+    display: flex;
+    padding: 32px 40px 0 40px;
+    align-items: center;
+
+
+}
+
+.header__info{
+    display: flex;
+    align-items: center;
+    height: 40px;
+}
+
+
+.logo__content {
+    width: 89px;
+    height: 40px;
+}
+
+.header__date {
+    width: 160px;
+    height: 24px;
+    margin-left: 24px;
+
+    font-family: Cabinet Grotesk, serif;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 24px;
+
+}
+
+.user__avatar {
+    width: 40px;
+    height: 40px;
+}
+
+.user__img {
+    width: 40px;
+    height: 40px;
+}
+
+
+.toolbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 421px;
+    height: 40px;
+    margin-left: auto;
+
+}
+
+.temp-switch {
+    position: relative;
+    width: 56px;
+    height: 28px;
+    box-sizing: border-box;
+    border: 0px solid transparent;   /* всегда есть рамка */
+    border-radius: 20px;
+    margin-right: 20px;
+    /*display:inline-flex;*/
+    /*border-radius: 20px;*/
+    /*overflow: hidden;*/
+    /*background: #fff;*/
+    /*padding: 0 2px;*/
+    /*border: 2px #7E7E7E solid;*/
+    /*box-shadow: 0 0 0 2px #7E7E7E inset; !* рамка вместо border *!*/
+}
+
+.switch__background{
+    width: 100%;
+    height: 100%;
+    background: #FFF;
+    border: 2px solid #7E7E7E;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+.temp-switch:hover .switch__background{
+    border: 2px solid #000000;
+}
+
+.temp-btn {
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    /*flex:1;*/
+    border: none;
+    background: transparent;
+    color: #7E7E7E;
+    font-family: "Cabinet Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: 0.2s;
+    z-index: 1;
+}
+
+.temp-btn__left {
+    left: 0;
+    top: 0;
+}
+
+.temp-btn__right {
+    right: 0;
+    top: 0;
+}
+
+
+/*.temp-btn:hover {*/
+/*    color: #000000;*/
+/*}*/
+
+/* наведение только для неактивной, чтобы активная не «прыгала» */
+/*.temp-switch:hover {*/
+/*border: 2px #000000 solid;*/
+/*border-radius: 20px;*/
+/*box-shadow: 0 0 0 3px #000000 inset; !* рамка вместо border *!*/
+/*}*/
+
+
+/* активная — чёрный круг */
+.temp-btn.active {
+    background: #000000;
+    color: #FFFFFF;
+    border-radius: 50%;
+    /*transform: scale(1.08);*/
+}
+
+
+.toolbar__btn_add {
+    font-family: Cabinet Grotesk, serif;
+    font-weight: 700;
+    line-height: 24px;
+    width: auto;
+    height: 24px;
+    font-size: 20px;
+    margin-right: 20px;
+    /*padding-left: 20px;*/
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: 25px;
+    justify-content: center;
+    margin-right: 12px;
+    /*padding-left: 20px;*/
+}
+
+.user__name {
+    font-family: Cabinet Grotesk, serif;
+    font-weight: 700;
+    font-size: 20px;
+
+}
+
+
+.weather-banner {
+    display: flex;
+    align-items: center;
+    margin: 28px 40px 0 40px;
+}
+
+.weather-banner_temperature {
+    width: 69px;
+    height: 40px;
+    margin-left: 16px;
+    font-family: Cabinet Grotesk, serif;
+    font-weight: 700;
+    font-size: 36px;
+    color: #FFFFFF;
+
+}
+
+.weather-banner {
+    height: 80px;
+    background-repeat: no-repeat;
+    background-position: right top;
+    border-radius: 8px;
+}
+
+
+
+.main_product{
+    margin: 40px 40px 0 40px;
+}
+
+.wardrobe {
+    display: flex;
+    justify-items: center;
+    flex-wrap: wrap;
+    margin-top: 34px
+}
+
+.content__profile{
+    display: flex;
+    flex-direction: column;
+}
+
+.content__avatar{
+    display: flex;
+    align-items: center;
+    width: 229px;
+    height: 56px;
+}
+
+.user__photo{
+    width: 56px;
+    height: 56px;
+}
+
+.user__name{
+
+}
+
+
+
+
+
+
+
+
+
+
+
+.recommend__text {
+    font-family: Cabinet Grotesk, serif;
+    font-weight: 700;
+    font-size: 25px;
+}
+
+.card__head {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    width: 323px;
+    height: 326px;
+    box-shadow: 0 0 0 2px #7E7E7E inset; /* рамка вместо border */
+    border-radius: 19px;
+    background-image: url("./img/Cap.png");
+
+
+}
+
+.card__head {
+    display: flex;
+    align-items: center;
+    height: 24px;
+
+    padding-top: 23px;
+
+
+}
+
+.card__title {
+    display: flex;
+    align-items: center;
+
+    height: 20px;
+    font-family: Cabinet Grotesk, serif;
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    background: #FFFFFF;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.card__favorites {
+
+    border: none;
+    transition: transform 0.2s ease;
+    background: url('/img/heart.png') no-repeat center;
+}
+
+.card__favorites:hover {
+    background: url('/img/h_like.png') no-repeat center;
+}
+
+.card__favorites > img {
+    width: 20px;
+    height: 15px;
+    margin-left: 10px;
+}
+
+.footer {
+    max-width: 1360px;
+    height: auto;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 100px 0 0;
+}
+
