@@ -314,7 +314,7 @@
     height: 326px;
     box-shadow: 0 0 0 2px #7E7E7E inset; /* рамка вместо border */
     border-radius: 19px;
-    background-image: url("./img/Cap.png");
+    background-image: url("../img/Shorts.png");
 
 
 }
@@ -332,9 +332,9 @@
 .card__title {
     display: flex;
     align-items: center;
-
     height: 20px;
     font-family: Cabinet Grotesk, serif;
+    color: rgba(0, 0, 0, 0.6);
     font-weight: 200;
     font-size: 14px;
     line-height: 20px;
