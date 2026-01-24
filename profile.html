@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Profile</title>
+    <link rel="stylesheet" href="css/font.css"/>
     <link rel="stylesheet" href="css/style_profile.css">
 </head>
 <body>
@@ -15,20 +16,22 @@
                         <img src="./img/Logo.png" alt="">
                     </div>
                 </a>
-                <div class="header__date">15 июня, New York</div>
+                <div class="header__date">June 15, New York</div>
             </div>
             <div class="toolbar">
                 <div class="temp-switch">
                     <div class="switch__background"></div>
-                    <button class="temp-btn temp-btn__left" type="button" data-unit="f">F</button>
-                    <button class="temp-btn temp-btn__right active" data-unit="c">С</button>
+                    <button class="temp-btn temp-btn__left" type="button" data-unit="F">F</button>
+                    <button class="temp-btn temp-btn__right active" type="button" data-unit="C">C</button>
                 </div>
-                <div class="toolbar__btn_add">+ Add clothes</div>
+                <div class="toolbar__btn_add" id="new_garment">+ Add clothes</div>
                 <div class="user">
-                    <div class="user__name">Terrence T</div>
+                    <div class="user__name"><a href="profile.html">Terrence Tegegne</a></div>
                 </div>
                 <div class="user__avatar">
-                    <img class="user__img" src="img/avatar.png" alt="avatar">
+                    <a href="">
+                        <img class="user__img" src="img/avatar.png" alt="avatar">
+                    </a>
                 </div>
             </div>
         </div>
@@ -43,7 +46,7 @@
                     </div>
                 </div>
                 <div class="content__menu">
-                    <div class="content__item">Change profile data</div>
+                    <div id="change_profile" class="content__item">Change profile data</div>
                     <div class="content__item">Log out</div>
                 </div>
             </div>
@@ -100,8 +103,33 @@
     </div>
     <div class="footer">
         <div class="footer__title">Developed by Name Surname</div>
+        <div class="footer__date" id="footer__date"></div>
     </div>
 </div>
-<!--<script src="dist/index.js"></script>-->
+<!-- модалка -->
+<div class="modal" hidden>
+    <div class="modal__overlay"></div>
+
+    <div class="modal__dialog" role="dialog" aria-modal="true">
+        <button class="modal__close" aria-label="Close"></button>
+
+        <h2 class="modal__title">Change profile data</h2>
+
+        <form class="modal__form">
+            <label>
+                Name *
+                <input  name="name" type="text" placeholder="Terrence Tegegne" required />
+            </label>
+
+            <label>
+                Avatar *
+                <input type="text" placeholder="htttps://www.imgur.com/1wsdewes3" required />
+            </label>
+
+            <button type="submit">Save changes</button>
+        </form>
+    </div>
+</div>
+<script src="dist/index.js"></script>
 </body>
 </html>

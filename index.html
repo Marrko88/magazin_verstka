@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>wtwr</title>
+    <link rel="stylesheet" href="css/font.css"/>
     <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="">
 </head>
 <body>
 <div class="page">
@@ -15,74 +17,75 @@
                         <img src="./img/Logo.png" alt="">
                     </div>
                 </a>
-                <div class="header__date">15 июня, New York</div>
+                <div class="header__date">June 15, New York</div>
             </div>
             <div class="toolbar">
                 <div class="temp-switch">
                     <div class="switch__background"></div>
-                    <button class="temp-btn temp-btn__left" type="button" data-unit="f">F</button>
-                    <button class="temp-btn temp-btn__right active" data-unit="c">С</button>
+                    <button class="temp-btn temp-btn__left" type="button" data-unit="F">F</button>
+                    <button class="temp-btn temp-btn__right active" type="button" data-unit="C">C</button>
                 </div>
-                <div class="toolbar__btn_add">+ Add clothes</div>
+                <div class="toolbar__btn_add" id="new_garment">+ Add clothes</div>
                 <div class="user">
-                    <div class="user__name">Terrence T</div>
+                    <div class="user__name"><a href="profile.html">Terrence Tegegne</a></div>
                 </div>
                 <div class="user__avatar">
-                    <img class="user__img" src="img/avatar.png" alt="avatar">
+                    <a href="">
+                        <img class="user__img" src="img/avatar.png" alt="avatar">
+                    </a>
                 </div>
             </div>
         </div>
-        <div class="weather-banner weather-banner_day-sunny">
-            <div class="weather-banner_temperature">75°F</div>
+        <div id="weather" class=" ">
+            <div id="temperature" class="weather-banner_temperature"></div>
         </div>
         <div class="main_product">
             <div class="recommend">
                 <p class="recommend__text">Today is 75° F / You may want to wear:</p>
             </div>
             <div class="wardrobe">
-                <div class="card">
+                <div class="card card_background_1">
                     <div class="card__head card__head_background_yellow">
                         <div class="card__title">T‑Shirt</div>
-                        <button class="card__favorites"></button>
+                        <button class="card__favorites"><img src="/img/heart.png" alt=""></button>
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card card_background_2">
                     <div class="card__head card__head_background_red">
                         <div class="card__title">Shorts</div>
-                        <button class="card__favorites">
-                            <img src="" alt="">
+                        <button class="card__favorites"><img src="/img/heart.png" alt="">
                         </button>
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card card_background_3">
                     <div class="card__head">
                         <div class="card__title">Cap</div>
-                        <button class="card__favorites"></button>
+                        <button class="card__favorites"><img src="/img/heart.png" alt=""></button>
                     </div>
 
                 </div>
 
-                <div class="card">
+                <div class="card card_background_4">
                     <div class="card__head">
                         <div class="card__title">Sneakers</div>
-                        <button class="card__favorites"></button>
+                        <button class="card__favorites"><img src="/img/heart.png" alt=""></button>
                     </div>
 
                 </div>
 
-                <div class="card">
+                <div class="card card_background_5">
                     <div class="card__head">
                         <div class="card__title">Sunglasses</div>
-                        <button class="card__favorites"></button>
+                        <button class="card__favorites"><img src="/img/heart.png" alt=""></button>
                     </div>
 
                 </div>
-                <div class="card">
+                <div class="card card_background_6">
                     <div class="card__head">
                         <div class="card__title">Vintage cap</div>
-                        <button class="card__favorites"></button>
+                        <button class="card__favorites"><img src="/img/heart.png" alt=""></button>
                     </div>
 
                 </div>
@@ -92,8 +95,150 @@
 
     <div class="footer">
         <div class="footer__title">Developed by Name Surname</div>
+        <div class="footer__date" id="footer__date"></div>
     </div>
 </div>
-<!--<script src="dist/index.js"></script>-->
+
+<!--модалка для новой одежды-->
+<div class="modal" hidden>
+    <div class="modal__overlay"></div>
+    <div class="modal__dialog" aria-modal="true">
+        <button class="modal__close" aria-label="Close"></button>
+        <h2 class="modal__title">New garment</h2>
+        <form class="modal-form">
+            <label class="modal__label">
+                Name
+                <input class="modal__input" name="name" type="text" placeholder="Name"/>
+            </label>
+
+            <label class="modal__label">
+                Image
+                <input class="modal__input" name="Image" type="text" placeholder="Image URL"/>
+            </label>
+
+            <fieldset class="fieldset__weather-type">
+                <legend class="fieldset__legend">Select the weather type:</legend>
+
+                <label class="fieldset__label">
+                    <input class="fieldset__input" type="radio" name="weatherType" value="1">
+                    <span class="fieldset__span">Hot</span>
+                </label>
+
+                <label class="fieldset__label">
+                    <input class="fieldset__input" type="radio" name="weatherType" value="2">
+                    <span class="fieldset__span">Warm</span>
+                </label>
+
+                <label class="fieldset__label">
+                    <input class="fieldset__input" type="radio" name="weatherType" value="3">
+                    <span class="fieldset__span">Cold</span>
+                </label>
+            </fieldset>
+            <button class="modal__button" type="submit">Add garment</button>
+        </form>
+    </div>
+</div>
+
+<!--модалка карточки продукта-->
+<div class="modal-product" hidden>
+    <div class="modal-product__overlay"></div>
+    <div class="modal-product__dialog" aria-modal="true">
+        <button class="modal-product__close" aria-label="Close"></button>
+        <div class="modal-product__content">
+            <div class="modal-product__img"></div>
+            <div class="modal-product__description">
+                <div class="description__content">
+                    <p class="description__heading">Cap</p>
+                    <p class="description__text">Weather: hot</p>
+                </div>
+                <button class="modal-product__button_delete">Delete item</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--модальное окно для подтверждения удаления товара-->
+<div class="modal-delete" hidden>
+    <div class="modal-delete__overlay"></div>
+    <div class="modal-delete__dialog" aria-label="true">
+        <button class="modal-delete__close"></button>
+        <div class="modal-delete__heading">
+            <span>Are you sure you want to delete this item?</span>
+            <span>This action is irreversible.</span>
+        </div>
+        <button class="modal-delete__button_delete">Yes, delete item</button>
+        <button class="modal-delete__button_cancel">Cancel</button>
+    </div>
+</div>
+
+
+<!--модальное окно для Login-->
+<div class="modal" hidden>
+    <div class="modal__overlay"></div>
+    <div class="modal__dialog">
+        <button class="modal__close"></button>
+        <form class="modal__form">
+            <span class="modal__title">Login</span>
+            <label class="modal__label">
+                <span>Email</span>
+                <input class="modal__input" type="email" placeholder="Email">
+            </label>
+            <label class="modal__label">
+                <span>Password</span>
+                <input class="modal__input" type="password" placeholder="Password">
+            </label>
+
+            <span class="modal__error">Email or password incorrect</span>
+            <div class="modal__remember">
+                <button class="modal__button">Login</button>
+                <span class="modal__span">or Sign Up</span>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<!--модальное окно для Sign Up-->
+<div class="modal" hidden>
+    <div class="modal__overlay"></div>
+    <div class="modal__dialog">
+        <button class="modal__close"></button>
+        <form class="modal__form">
+            <span class="modal__title">Sign Up</span>
+            <label class="modal__label">
+                <span>Email</span>
+                <input class="modal__input" type="email" placeholder="Email">
+            </label>
+            <label class="modal__label">
+                <span>Password</span>
+                <input class="modal__input" type="password" placeholder="Password">
+            </label>
+            <label class="modal__label">
+                Name *
+                <input  class="modal__input" name="name" type="text" placeholder="Terrence Tegegne" required />
+            </label>
+
+            <label class="modal__label">
+                Avatar *
+                <input class="modal__input" type="text" placeholder="htttps://www.imgur.com/1wsdewes3" required />
+            </label>
+
+            <div class="modal__remember">
+                <button class="modal__button">Sign Up</button>
+                <span class="modal__span">or Login</span>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script defer src="dist/index.js"></script>
 </body>
 </html>
+

@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "es2016",
     "module": "commonjs",
+    "lib": ["ES2020", "DOM", "ES2020.Promise"],
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,

@@ -3,31 +3,38 @@
     -moz-box-sizing: border-box;
     -o-box-sizing: border-box;
     -ms-box-sizing: border-box;
-    box-sizing:border-box;
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-.page{
+.page {
+    font-family: Cabinet Grotesk, serif;
+    position: relative;
+    min-height: 100vh;
     background: #F3F3F3;
-}
-.container {
-    background: #F3F3F3;
-    max-width: 1440px;
-    height: auto;
-    margin: 0 auto; /* центрирует по горизонтали */
-    box-sizing: border-box;
+    padding: 32px 40px 24px;
 }
 
+.container {
+    height: auto;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding-bottom: 96px;
+
+}
+/*header*/
 .header {
     display: flex;
-    padding: 32px 40px 0 40px;
+    /*width:1360px;*/
+    /*margin-left: 40px;*/
+    /*padding: 32px 40px 0 40px;*/
     align-items: center;
 
 
 }
 
-.header__info{
+.header__info {
     display: flex;
     align-items: center;
     height: 40px;
@@ -43,11 +50,10 @@
     width: 160px;
     height: 24px;
     margin-left: 24px;
-
-    font-family: Cabinet Grotesk, serif;
     font-weight: 700;
-    font-size: 15px;
-    line-height: 24px;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0.3px;
 
 }
 
@@ -77,19 +83,12 @@
     width: 56px;
     height: 28px;
     box-sizing: border-box;
-    border: 0px solid transparent;   /* всегда есть рамка */
+    border: 0px solid transparent;
     border-radius: 20px;
     margin-right: 20px;
-    /*display:inline-flex;*/
-    /*border-radius: 20px;*/
-    /*overflow: hidden;*/
-    /*background: #fff;*/
-    /*padding: 0 2px;*/
-    /*border: 2px #7E7E7E solid;*/
-    /*box-shadow: 0 0 0 2px #7E7E7E inset; !* рамка вместо border *!*/
 }
 
-.switch__background{
+.switch__background {
     width: 100%;
     height: 100%;
     background: #FFF;
@@ -98,19 +97,18 @@
     box-sizing: border-box;
 }
 
-.temp-switch:hover .switch__background{
+.temp-switch:hover .switch__background {
     border: 2px solid #000000;
 }
 
 .temp-btn {
+    border-radius: 50%;
     position: absolute;
     height: 28px;
     width: 28px;
-    /*flex:1;*/
     border: none;
     background: transparent;
     color: #7E7E7E;
-    font-family: "Cabinet Grotesk", sans-serif;
     font-weight: 700;
     font-size: 14px;
     display: grid;
@@ -131,42 +129,30 @@
 }
 
 
-/*.temp-btn:hover {*/
-/*    color: #000000;*/
-/*}*/
-
-/* наведение только для неактивной, чтобы активная не «прыгала» */
-/*.temp-switch:hover {*/
-    /*border: 2px #000000 solid;*/
-    /*border-radius: 20px;*/
-    /*box-shadow: 0 0 0 3px #000000 inset; !* рамка вместо border *!*/
-/*}*/
-
-
 /* активная — чёрный круг */
 .temp-btn.active {
     background: #000000;
     color: #FFFFFF;
-    border-radius: 50%;
+
     /*transform: scale(1.08);*/
 }
 
 
 .toolbar__btn_add {
-    font-family: Cabinet Grotesk, serif;
     font-weight: 700;
     line-height: 24px;
-    width: auto;
+    width: 117px;
     height: 24px;
     font-size: 20px;
     margin-right: 20px;
-    /*padding-left: 20px;*/
+    letter-spacing: 0.2px;
+
 }
 
 .user {
     display: flex;
     align-items: center;
-    width: auto;
+    width: 159px;
     height: 25px;
     justify-content: center;
     margin-right: 12px;
@@ -174,24 +160,32 @@
 }
 
 .user__name {
-    font-family: Cabinet Grotesk, serif;
     font-weight: 700;
     font-size: 20px;
+    letter-spacing: 0.1px;
+
 
 }
+
+.user__name a {
+    outline: none;
+    text-decoration: none;
+    color: inherit;
+}
+
+/*end header*/
 
 
 .weather-banner {
     display: flex;
     align-items: center;
-    margin: 28px 40px 0 40px;
+    margin-top: 28px;
 }
 
 .weather-banner_temperature {
     width: 69px;
     height: 40px;
     margin-left: 16px;
-    font-family: Cabinet Grotesk, serif;
     font-weight: 700;
     font-size: 36px;
     color: #FFFFFF;
@@ -202,35 +196,90 @@
     height: 80px;
     background-repeat: no-repeat;
     background-position: right top;
-    border-radius: 8px;
+    border-radius: 12px;
 }
 
-.weather-banner_day-rain {
-    background-color: #6CA6C7;
-    background-image: url("../img/Rainy.png");
+/*"Погода"*/
+
+.weather-banner_day-Rain {
+    background-color: rgb(108, 166, 199);
+    background-image: url("../img/wether/dayRainy.png");
 }
 
-.weather-banner_day-sunny {
-    background-color: #00A3FF;
-    background-image: url("../img/Sunny.png");
+.weather-banner_day-Clear {
+    background-color: rgb(0, 163, 255);
+    background-image: url("../img/wether/clear_day.png");
 }
 
-.main_product{
-    margin: 40px 40px 0 40px;
+.weather-banner_day-Clouds {
+    background-color: rgba(0, 163, 255, 1);
+    background-image: url("../img/wether/day_cloudy.png");
+}
+
+.weather-banner_day-Thunderstorm {
+    background-color: rgba(108, 166, 199, 1);
+    background-image: url("../img/wether/dayStorm.png");
+}
+
+.weather-banner_day-Snow {
+    background-color: rgba(108, 166, 199, 1);
+    background-image: url("../img/wether/daySnow.png");
+}
+
+.weather-banner_day-Fog {
+    background-color: rgba(108, 166, 199, 1);
+    background-image: url("../img/wether/dayFog.png");
+}
+
+
+.weather-banner_night-Rain {
+    background-color: rgba(40, 104, 151, 1);
+    background-image: url("../img/wether/rainNight.png");
+}
+
+.weather-banner_night-Clear {
+    background-color: rgba(40, 104, 151, 1);
+    background-image: url("../img/wether/clearSky.png");
+}
+
+.weather-banner_night-Clouds {
+    background-color: rgba(40, 104, 151, 1);
+    background-image: url("../img/wether/night_could.png");
+}
+
+.weather-banner_night-Thunderstorm {
+    background-color: rgba(40, 104, 151, 1);
+    background-image: url("../img/wether/nightStorm.png");
+}
+
+.weather-banner_night-Snow {
+    background-color: rgba(40, 104, 151, 1);
+    background-image: url("../img/wether/nightSnow.png");
+}
+
+.weather-banner_night-Fog {
+    background-color: rgba(40, 104, 151, 1);
+    background-image: url("../img/wether/nightFog.png");
+}
+
+
+.main_product {
+    margin-top: 40px;
 }
 
 .wardrobe {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(325px, 1fr));
-    row-gap: 20px;
+    gap: 20px 19px;
     justify-items: center;
-    margin-top: 34px
+    margin-top: 35px
 }
 
 .recommend__text {
-    font-family: Cabinet Grotesk, serif;
     font-weight: 700;
-    font-size: 25px;
+    font-size: 20px;
+    letter-spacing: 0.2px;
+
 }
 
 .card__head {
@@ -241,60 +290,549 @@
 .card {
     width: 323px;
     height: 326px;
-    box-shadow: 0 0 0 2px #7E7E7E inset; /* рамка вместо border */
+    box-shadow: 0 0 0 1px #0000004D inset;
     border-radius: 19px;
-    background-image: url("../img/Cap.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #E9E9E9;
+}
 
+.card_background_1 {
+    background-image: url("../img/product/T-Shirt.png");
+}
 
+.card_background_2 {
+    background-image: url("../img/product/Shorts.png");
+}
+
+.card_background_3 {
+    background-image: url("../img/product/Cap.png");
+}
+
+.card_background_4 {
+    background-image: url("../img/product/Sneakers.png");
+}
+
+.card_background_5 {
+    background-image: url("../img/product/Sunglasses.png");
+}
+
+.card_background_6 {
+    background-image: url("../img/product/photo-cap.png");
 }
 
 .card__head {
     display: flex;
     align-items: center;
     height: 24px;
-
-    padding-top: 23px;
-
-
+    margin-top: 15px;
 }
 
 .card__title {
     display: flex;
-    align-items: center;
-
-    height: 20px;
-    font-family: Cabinet Grotesk, serif;
-    font-weight: 200;
-    font-size: 14px;
+    align-items: flex-end;
+    color: #00000099;
+    height: 24px;
+    font-weight: 700;
+    font-size: 16px;
     line-height: 20px;
     text-align: center;
     background: #FFFFFF;
-    padding: 10px;
+    padding: 2px 12px;
     border-radius: 4px;
 }
 
 .card__favorites {
-
+    margin-left: 10px;
+    margin-top: 5px;
     border: none;
     transition: transform 0.2s ease;
-    background: url('/img/heart.png') no-repeat center;
+    background: none;
 }
 
-.card__favorites:hover {
-    background: url('/img/h_like.png') no-repeat center;
+.card__favorites img {
+    content: url('/img/heart.png');
 }
 
-.card__favorites > img {
-    width: 20px;
+.card__favorites img:hover {
+    content: url('/img/h_like.png');
+    width: 18px;
     height: 15px;
-    margin-left: 10px;
+    border: none;
+
 }
+
+/*.card__favorites > img {*/
+/*    width: 20px;*/
+/*    height: 15px;*/
+/*    margin-left: 10px;*/
+/*}*/
 
 .footer {
-    max-width: 1360px;
-    height: auto;
-    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 0;
+    width: calc(100% - 80px);
+    background: #F3F3F3;
+    height: 24px;
+    margin-bottom: 20px;
     box-sizing: border-box;
-    padding: 100px 0 0;
 }
+
+.footer__title {
+    font-family: Cabinet Grotesk, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+
+
+}
+
+/*модалка*/
+
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Cabinet Grotesk, serif;
+    font-weight: 700;
+    font-size: 16px;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+}
+
+
+.modal[hidden] {
+    display: none;
+}
+
+.modal__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.modal__dialog {
+    position: relative;
+    max-width: 496px;
+    width: 100%;
+    margin: auto;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 20px;
+    padding: 28px;
+    z-index: 1;
+}
+
+.modal__label {
+    display: block;
+    margin-top: 24px;
+}
+
+.modal__input {
+    width: 440px;
+    padding-top: 12px;
+    border: none;
+    border-bottom: 1px solid #000000;
+    outline: none;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.modal_form select{
+    display: block;
+    margin-top: 24px;
+    max-width: 124px;
+    width: 100%;
+    height: 36px;
+    border: none;
+    border-radius: 4px;
+    background:rgba(0, 0, 0, 0.3);
+    color: rgba(255,255,255, 1);
+    font-weight: 700;
+    font-size: 16px;
+}
+
+
+
+.fieldset__weather-type {
+    max-width: 173px;
+    margin-top: 24px;
+    width: 100%;
+    height: 108px;
+    border: none;
+}
+
+.fieldset__legend {
+    font-size: 14px;
+    margin-bottom: 4px;
+    color: #000000;
+}
+.fieldset__label{
+    display: flex;
+    margin-top: 8px;
+
+}
+
+.fieldset__input{
+    accent-color: rgba(0, 0, 0, 0.5);
+    margin-right: 11px;
+    width: 16px;
+    height: 16px;
+
+}
+
+.fieldset__input:checked {
+    accent-color: rgba(0, 0, 0, 1);
+    width: 16px;
+    height: 16px;
+}
+
+.fieldset__span{
+    color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.fieldset__input:checked + .fieldset__span{
+    color: rgba(0, 0, 0, 1);
+
+}
+
+
+.modal__button{
+    max-width: 124px;
+    width: 100%;
+    height: 36px;
+    border: none;
+    border-radius: 4px;
+    background:rgba(0, 0, 0, 0.3);
+    color: rgba(255,255,255, 1);
+    font-weight: 700;
+    margin-right: 12px;
+}
+
+.modal__close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+
+    width: 14px;
+    height: 14px;
+
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+/* общие стили для линий */
+.modal__close::before,
+.modal__close::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+
+    width: 16px;
+    height: 2px;
+    background-color: #B3B3B3;
+    transform-origin: center;
+}
+
+
+.modal__close::before {
+    transform: translateY(-50%) rotate(45deg);
+}
+
+
+.modal__close::after {
+    transform: translateY(-50%) rotate(-45deg);
+}
+
+/*модалка карточки продукта*/
+
+.modal-product{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Cabinet Grotesk, serif;
+    font-weight: 700;
+    font-size: 16px;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+}
+
+.modal-product[hidden] {
+    display: none;
+}
+
+.modal-product__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-product__dialog {
+    position: relative;
+    max-width: 498px;
+    width: 100%;
+    height: 610px;
+    margin: auto;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 16px;
+    z-index: 1;
+}
+
+
+.modal-product__img {
+    display: block;
+    background-image: url("../img/product/photo-cap.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 16px 16px 0 0;
+    width: 498px;
+    height: 498px;
+}
+
+.modal-product__description{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 32px 32px 32px;
+}
+.modal-product__button_delete{
+    border: none;
+    background: none;
+    color: rgba(255, 77, 0, 1);
+    height: 24px;
+    font-family: Cabinet Grotesk, serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+
+.description__heading{
+    font-family: Cabinet Grotesk, serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.description__content{
+    display: block;
+    font-family: Cabinet Grotesk, serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.description__text{
+    margin-top: 12px;
+}
+
+
+.modal-product__close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+
+    width: 16px;
+    height: 16px;
+
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+/* общие стили для линий */
+.modal-product__close::before,
+.modal-product__close::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+
+    width: 16px;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 1);
+    transform-origin: center;
+}
+
+
+.modal-product__close::before {
+    transform: translateY(-50%) rotate(45deg);
+}
+
+
+.modal-product__close::after {
+    transform: translateY(-50%) rotate(-45deg);
+}
+
+/*модальное окно для подтверждения удаления товара*/
+
+.modal-delete{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Cabinet Grotesk, serif;
+    font-weight: 700;
+    font-size: 20px;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+}
+
+.modal-delete[hidden] {
+    display: none;
+}
+
+.modal-delete__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-delete__dialog {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    max-width: 670px;
+    width: 100%;
+    height: 280px;
+    margin: auto;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 16px;
+    z-index: 1;
+}
+
+.modal-delete__heading{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 32px;
+    max-width: 367px;
+    width: 100%;
+    height: auto;
+}
+
+.modal-delete__button_delete{
+    margin-top: 40px;
+    border: none;
+    background: none;
+    color: rgba(255, 77, 0, 1);
+    font-family: Cabinet Grotesk,serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.modal-delete__button_cancel{
+    margin-top: 24px;
+    border: none;
+    background: none;
+    color: rgba(0, 0, 0, 1);
+    font-family: Cabinet Grotesk,serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+
+.modal-delete__close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+
+    width: 16px;
+    height: 16px;
+
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+/* общие стили для линий */
+.modal-delete__close::before,
+.modal-delete__close::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+
+    width: 16px;
+    height: 2px;
+    background-color: rgba(0, 0, 0, 0.3);
+    transform-origin: center;
+}
+
+
+.modal-delete__close::before {
+    transform: translateY(-50%) rotate(45deg);
+}
+
+
+.modal-delete__close::after {
+    transform: translateY(-50%) rotate(-45deg);
+}
+
+
+
+
+
+
+
+
+
+/*модальное окно для Login*/
+.modal__label > span{
+ margin-top: 24px;
+}
+
+.modal__error{
+    display: inline-block;
+    font-family: Cabinet Grotesk,serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 24px;
+    color:rgba(255, 77, 0, 1)
+}
+.modal__remember{
+    display: flex;
+    align-items: center;
+    margin: 40px 0 36px 0;
+
+}
+.modal-login__button{
+    width: 73px;
+    height: 36px;
+    border: none;
+    border-radius: 4px;
+    background:rgba(0, 0, 0, 0.3);
+    color: rgba(255,255,255, 1);
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.modal__button:hover{
+    background:rgba(0, 0, 0, 1);
+}
+
+
+.modal__span{
+    font-family: Cabinet Grotesk, serif;
+    font-weight: 700;
+    font-size: 16px;
+    margin-left: 12px;
+    color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+
+
 
