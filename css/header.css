@@ -1,0 +1,146 @@
+/*header*/
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__info {
+    display: flex;
+    align-items: center;
+    height: 40px;
+}
+
+
+.logo__content {
+    width: 89px;
+    height: 40px;
+}
+
+.header__date {
+    width: 160px;
+    height: 24px;
+    margin-left: 24px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0.3px;
+
+}
+
+.user__avatar {
+    width: 40px;
+    height: 40px;
+}
+
+.user__img {
+    width: 40px;
+    height: 40px;
+}
+
+
+.toolbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 421px;
+    height: 40px;
+
+}
+
+.temp-switch {
+    position: relative;
+    width: 56px;
+    height: 28px;
+    box-sizing: border-box;
+    border: 0px solid transparent;
+    border-radius: 20px;
+    margin-right: 20px;
+}
+
+.switch__background {
+    width: 100%;
+    height: 100%;
+    background: #FFF;
+    border: 2px solid #7E7E7E;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+.temp-switch:hover .switch__background {
+    border: 2px solid #000000;
+}
+
+.temp-btn {
+    border-radius: 50%;
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border: none;
+    background: transparent;
+    color: #7E7E7E;
+    font-weight: 700;
+    font-size: 14px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: 0.2s;
+    z-index: 1;
+}
+
+.temp-btn__left {
+    left: 0;
+    top: 0;
+}
+
+.temp-btn__right {
+    right: 0;
+    top: 0;
+}
+
+
+/* активная — чёрный круг */
+.temp-btn.active {
+    background: #000000;
+    color: #FFFFFF;
+
+    /*transform: scale(1.08);*/
+}
+
+
+.toolbar__btn_add {
+    font-weight: 700;
+    line-height: 24px;
+    width: 117px;
+    height: 24px;
+    font-size: 20px;
+    margin-right: 20px;
+    letter-spacing: 0.2px;
+
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    width: 159px;
+    height: 25px;
+    justify-content: center;
+    margin-right: 12px;
+    /*padding-left: 20px;*/
+}
+
+.user__name {
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 0.1px;
+
+
+}
+
+.user__name a {
+    outline: none;
+    text-decoration: none;
+    color: inherit;
+}
+
+/*end header*/
