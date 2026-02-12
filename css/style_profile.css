@@ -90,6 +90,11 @@
     justify-content: space-around;
 }
 
+.user__avatar__img{
+    width: 56px;
+    height: 56px;
+}
+
 
 
 

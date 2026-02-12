@@ -28,6 +28,13 @@
 
 }
 
+.header__toolbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
 .user__avatar {
     width: 40px;
     height: 40px;
@@ -48,14 +55,14 @@
 
 }
 
-.temp-switch {
+.toolbar__temp-switch {
     position: relative;
     width: 56px;
     height: 28px;
     box-sizing: border-box;
     border: 0px solid transparent;
     border-radius: 20px;
-    margin-right: 20px;
+
 }
 
 .switch__background {
@@ -67,7 +74,7 @@
     box-sizing: border-box;
 }
 
-.temp-switch:hover .switch__background {
+.toolbar__temp-switch:hover .switch__background {
     border: 2px solid #000000;
 }
 
@@ -107,14 +114,18 @@
     /*transform: scale(1.08);*/
 }
 
+.toolbar__profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 
+}
 .toolbar__btn_add {
     font-weight: 700;
     line-height: 24px;
     width: 117px;
     height: 24px;
     font-size: 20px;
-    margin-right: 20px;
     letter-spacing: 0.2px;
 
 }
